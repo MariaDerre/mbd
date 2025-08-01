@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Raleway;
+  background-color: black;
+  color: aliceblue;
+}
+.center {
+  padding-left: calc(50% - 200px);
+  padding-right: calc(50% - 200px);
+}
+.header-container {
+  position: relative;
+  display: inline-block; /* или block, в зависимости от макета */
+}
+
+.header_pict {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 75%; /* по вертикали по центру */
+  left: 50%; /* по горизонтали по центру */
+  transform: translate(-50%, -50%); /* смещение для центрирования */
+  text-align: center; /* выравнивание текста по центру */
+}
+
+.cont_text_one {
+  font-size: 40px;
+}
+
+.cont_text_two {
+  font-size: 22px;
+}
+.area_pict {
+  padding-top: 100px;
+  width: 100%;
+  height: auto;
+}
+.area_text {
+  display: flex;
+  justify-content: center;
+}
+.dresscode_header {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+}
+.form_text {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+}
+.wishForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 320px) and (max-width: 430px) {
+  .center{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .overlay-text {
+    top: 80%;
+    width: 200px;
+  }
+
+  .cont_text_one {
+    font-size: 24px;
+  }
+
+  .cont_text_two {
+    font-size: 18px;
+  }
+}

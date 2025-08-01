@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "aAr3X-ZrY3d9db6CP",
+        });
+      })();
+    </script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="header center">
+      <img class="header_pict" src="img/photo_2025-08-01_16-36-12.jpg" alt="" />
+    </div>
+    <div class="container center">
+      <div class="overlay-text">
+        <p class="cont_text_one">ПРИГЛАШАЮ ВАС <br /></p>
+        <p class="cont_text_two">
+          на праздничный вечер <br />в честь моего юбилея
+        </p>
+      </div>
+    </div>
+    <div class="area center">
+      <img class="area_pict" src="img/photo_2025-08-01_12-25-27.jpg" alt="" />
+      <p class="area_text">
+        База отдыха "Березка Псков" <br />
+        57.927100, 28.167756
+      </p>
+    </div>
+    <div class="dresscode center">
+      <p class="dresscode_header">Дресс-код</p>
+      <p class="dresscode_text">
+        Для создания особой атмосферы праздника <br />
+        я прошу вас выбрать образ с
+        <span style="color: red">красным </span> элементом
+      </p>
+    </div>
+    <div class="gifts center">
+      <p class="dresscode_header">Виш-лист</p>
+      <p class="dresscode_text">
+        В свой день рождения я предпочитаю подарки <br />в денежном формате. Но
+        если вы хотите <br />
+        подарить что-то другое, то вот
+        <a href="https://followish.io/mywishlist/wgzthkajde1cde"
+          >мой виш-лист</a
+        >
+      </p>
+    </div>
+
+    <form id="wishForm" class="wishForm center">
+      <p class="form_text">Анкета</p>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Имя Фамилия"
+        style="font-family: Raleway; width: 100%"
+        required
+      /><br />
+
+      <textarea
+        placeholder="Ваши пожелания по поводу напитков и еды"
+        id="wishes"
+        name="message"
+        rows="3"
+        cols="70"
+        style="font-family: Raleway; width: 100%"
+        required
+      ></textarea
+      ><br />
+
+      <button type="submit">Отправить</button>
+    </form>
+    <p class="dresscode_header">Жду встречи!</p>
+
+    <script>
+      window.addEventListener("load", function () {
+        // Инициализация EmailJS после полной загрузки SDK
+        emailjs.init("aAr3X-ZrY3d9db6CP");
+
+        // Обработчик формы
+        document
+          .getElementById("wishForm")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const formData = {
+              name: document.getElementById("name").value,
+              message: document.getElementById("wishes").value,
+            };
+
+            emailjs.send("service_gcyzmku", "template_n3yacn6", formData).then(
+              function (response) {
+                alert("Письмо успешно отправлено!");
+                document.getElementById("wishForm").reset();
+              },
+              function (error) {
+                alert("Ошибка при отправке письма. Попробуйте еще раз.");
+                console.log("Ошибка:", error);
+              }
+            );
+          });
+      });
+    </script>
+  </body>
+</html>
