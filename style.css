@@ -9,6 +9,9 @@ body {
   padding-left: calc(50% - 200px);
   padding-right: calc(50% - 200px);
 }
+.header{
+  height: 240px;
+}
 .header-container {
   position: relative;
   display: inline-block; /* или block, в зависимости от макета */
@@ -21,10 +24,8 @@ body {
 }
 
 .overlay-text {
-  position: absolute;
-  top: 75%; /* по вертикали по центру */
-  left: 50%; /* по горизонтали по центру */
-  transform: translate(-50%, -50%); /* смещение для центрирования */
+  display: flex;
+  justify-content: center;
   text-align: center; /* выравнивание текста по центру */
 }
 
@@ -43,11 +44,15 @@ body {
 .area_text {
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 .dresscode_header {
   font-size: 30px;
   display: flex;
   justify-content: center;
+}
+.dresscode_text{
+  text-align: center;
 }
 .form_text {
   font-size: 30px;
