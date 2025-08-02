@@ -22,11 +22,15 @@ body {
   width: 100%;
   height: auto;
 }
-
+.container{
+  display: flex;
+  justify-content: center;
+}
 .overlay-text {
   display: flex;
   justify-content: center;
   text-align: center; /* выравнивание текста по центру */
+  flex-direction: column;
 }
 
 .cont_text_one {
@@ -37,7 +41,6 @@ body {
   font-size: 22px;
 }
 .area_pict {
-  padding-top: 120px;
   width: 100%;
   height: auto;
 }
